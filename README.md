@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# dev-dynamics-asg
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Main Branch
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd3384c7-ba46-441a-9ab1-b7c04f5f8bb8/deploy-status)](https://app.netlify.com/sites/dev-dynamics-asg/deploys)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Setup and Build
 
-### `npm start`
+Install `nvm`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ```ubuntu
+  $ cd dev-dynamics-asg
+  $ nvm use
+  $ npm install
+  $ npm run start
+  ```
+For production build kindly run - `npm run build` and that will creates a `build` directory with a production build of the app, kindly serve this file with
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+$ npm install -g serve
+$ serve -s build
+```
 
-### `npm test`
+For Testing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```
+  $ npm run start
+  $ npm test
+  ```
+## Directort Structure
 
-### `npm run build`
+- file/directory NAME - `camelCase`, file extension - `tsx` for typescipt and react and `ts` for typescript files
+- `src/`
+  - `pages/` - for specific page and its related components
+  - `services/` - for apis, differemt file for each page api, for common create a `common` folder with a new file.
+  - `components` - for reusable components i.e., `<Sidebar />, <Loader />...`
+  - `test/` - for test, fileName should end with `.test.ts`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## APP Dependency
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **CSS** - `tailwindcss` - why? - for readibility, easiness and to avoid css overwriding complexity
+- **JS** - React, react-query, typescript, recharts
+- **TEST** - Jest and puppeteer (tried to test it with cypress but Windows WSL2 have some issues with integration, instead used the puppeteer because of time constraint)

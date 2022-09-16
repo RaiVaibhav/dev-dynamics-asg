@@ -12,7 +12,7 @@ import OverviewPage from "./pages/overviewPage";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: true,
+      refetchOnWindowFocus: false,
       retry: 0,
       suspense: true
     }
@@ -28,11 +28,11 @@ export default function App() {
             <Route element={<NavLayout />}>
               <Route path="admin" element={<OverviewPage />}>
               </Route>
-              <Route path="metrics" element={<div>Test</div>}>
+              <Route path="metrics" element={<div id="metrics-page">Test</div>}>
               </Route>
-              <Route path="projects" element={<div>Test</div>}>
+              <Route path="projects" element={<div id="projects-page">Test</div>}>
               </Route>
-              <Route path="alerts" element={<div>Test</div>}>
+              <Route path="alerts" element={<div id="alerts-page">Test</div>}>
               </Route>
             </Route>
             <Route

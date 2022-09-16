@@ -20,7 +20,6 @@ export default function NavLayout() {
   const isSmall = useBreakpoint("sm", "down");
   const location = useLocation();
   const [currentPath, setCurrentPath] = useState(location.pathname);
-
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);

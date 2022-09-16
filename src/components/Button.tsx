@@ -9,6 +9,8 @@ export type ButtonColor =
   | "ghost-primary";
 
 type ButtonProps = {
+  id?: string,
+  ariaLabel?: string,
   children?: React.ReactNode;
   className?: string;
   color?: ButtonColor;
@@ -22,7 +24,7 @@ const colors: Record<string, string> = {
   error: "bg-red-500 text-white",
   "ghost-primary":
     "text-blue-900 bg-transparent border-transparent hover:bg-gray-100",
-  primary: "text-blue-900 bg-blue-100 border-transparent hover:bg-blue-200",
+  primary: "text-blue-900 bg-blue-100 border-transparent hover:bg-blue-300",
   success: "bg-green-500 text-white",
   warning: "bg-yellow-500 text-white"
 };
@@ -34,7 +36,9 @@ export default React.forwardRef(function Button(
     disabled,
     loading,
     onClick,
-    type = "button"
+    type = "button",
+    id,
+    ariaLabel
   }: ButtonProps,
   ref: React.Ref<any>
 ) {
@@ -50,6 +54,8 @@ export default React.forwardRef(function Button(
       onClick={onClick}
       ref={ref}
       type={type}
+      id={id}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
